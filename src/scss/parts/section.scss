@@ -237,141 +237,83 @@
 }
 
 #reviews {
-    &.section {
+    position: relative;
+    padding: 44px 0 84px 0;
+    background-image: url("@img/reviews/reviewvs-bgi.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .section__content {
         position: relative;
-        padding: 44px 0 84px 0;
-        background-image: url("@img/reviews/reviewvs-bgi.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+    }
 
-        // .section__container
-
-        &__container {
-        }
-
-        // .section__body
-
-        &__body {
-        }
-
-        // .section__top
-
-        &__top {
-        }
-
-        // .section__content
-
-        &__content {
-        }
-
-        .swiper {
-            // .swiper-wrapper
-
-            &-wrapper {
-            }
-
-            // .swiper-slide
-
-            &-slide {
-            }
-
-            // .swiper__control
-
-            &__control {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-                position: absolute;
-                left: 0;
-                top: 55%;
-                transform: translate(0, -50%);
-
-                button {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 50%;
-
-                    width: 54px;
-                    height: 54px;
-                    background-color: #fff;
-                    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.14));
-
-                    svg{
-                        pointer-events: none;
-                    }
-                }
-            }
+    .swiper {
+        @media (max-width: 768px) {
+            width: 100vw;
+            left: 50%;
+            transform: translate(-50%, 0);
+            padding: 0 14px;
         }
     }
 
-    .reviews {
-        max-width: 570px;
-        width: 100%;
-        padding: 29px 52px 28px 32px;
-        border-radius: 25px;
-        border: 1px solid #ecd5db;
-        background: #fff;
+    .swiper__control {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(100% + 150px);
+        position: absolute;
+        left: -75px;
+        top: 50%;
+        transform: translate(0, -50%);
+        z-index: 3;
 
-        // .reviews__top
+        @media (max-width: 1360px) {
+            width: calc(100% + 60px);
+            left: -30px;
+        }
 
-        &__top {
+        @media (max-width: 768px) {
+            position: static;
+            width: auto;
+            transform: none;
+            margin-top: 19px;
+            justify-content: center;
+
+            & > :not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+
+        button {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-        }
-
-        // .reviews__img
-
-        &__img {
+            justify-content: center;
             border-radius: 50%;
-            height: 76px;
-            margin-right: 15px;
-        }
 
-        // .reviews__info
+            width: 54px;
+            height: 54px;
+            background-color: #fff;
+            filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.14));
 
-        &__info {
-            span {
-                display: block;
-                margin-bottom: 4px;
-                font-family: Raleway;
-                font-weight: 700;
-                line-height: 26px;
+            @media (max-width: 768px) {
+                width: 40px;
+                height: 40px;
             }
 
             svg {
-                height: 13px;
-                fill: #ffcc18;
-            }
-        }
-
-        // .reviews__bottom
-
-        &__bottom {
-            p {
-                font-family: Manrope;
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 24px;
-                margin-bottom: 5px;
-            }
-            time {
-                color: #848484;
-                font-family: Manrope;
-                font-size: 14px;
-                font-weight: 400;
-                line-height: 24px;
+                pointer-events: none;
             }
         }
     }
 
     .prev {
     }
+
     .next {
-        transform: rotate(180deg);
+        svg,
+        img {
+            transform: rotate(180deg);
+        }
     }
 }
- 

@@ -5,7 +5,7 @@ html {
 body {
     scroll-behavior: smooth;
     line-height: 1.2;
-    color: #393939;
+    color: $color;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -46,24 +46,6 @@ main {
 
     @media (max-width: 768px) {
         padding-inline: 14px;
-    }
-
-    // ._container-small
-
-    &-small {
-        width: 100%;
-        margin-inline: auto;
-        max-width: 1000px;
-
-        @media (max-width: calc(1000 + $padding * 2) + px) {
-            padding-inline: $padding + px;
-            max-width: none;
-            margin-inline: 0;
-        }
-
-        @media (max-width: 768px) {
-            padding-inline: 20px;
-        }
     }
 }
 
@@ -233,86 +215,3 @@ svg {
         }
     }
 }
-
-// .swiper {
-//     width: 50%;
-//     @media (max-width: 768px) {
-//         width: 100%;
-//     }
-//     @include adaptive-value("height", 500, 383, 1);
-
-//     .next,
-//     .prev {
-//         position: absolute;
-//         top: 50%;
-//         transform: translate(0, -50%);
-//         z-index: 3;
-//         transition: all 0.3s ease 0s;
-
-//         svg {
-//             fill: transparent;
-//             stroke: #fff;
-//             stroke-width: 2px;
-//             width: fit-content;
-//             height: 20px;
-//         }
-//     }
-
-//     .prev {
-//         left: -220px;
-//         transform: rotate(90deg);
-//     }
-
-//     .next {
-//         right: -220px;
-//         transform: rotate(-90deg);
-//     }
-
-//     @media (any-hover: hover) {
-//         &:hover {
-//             .prev {
-//                 left: 20px;
-//             }
-//         }
-//     }
-
-//     @media (any-hover: hover) {
-//         &:hover {
-//             .next {
-//                 right: 20px;
-//             }
-//         }
-//     }
-
-//     .pagination {
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         gap: 4px;
-
-//         position: absolute;
-//         bottom: 0;
-//         left: 0;
-//         width: 100%;
-//         padding-bottom: 10px;
-//         z-index: 3;
-
-//         span {
-//             width: 7px;
-//             height: 7px;
-//             background-color: rgb(255, 255, 255, 0.5);
-//             display: block;
-//             flex: 0 0 auto;
-
-//             &.swiper-pagination-bullet-active {
-//                 background-color: rgb(255, 255, 255, 1);
-//             }
-//         }
-//     }
-// }
-
-// .swiper-slide img {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-// }

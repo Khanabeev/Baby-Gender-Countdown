@@ -12,11 +12,19 @@ if (slider) {
             Navigation,
         ],
         loop: true,
-        slidesPerView: 2,
         spaceBetween: 29,
+        
         navigation: {
             prevEl: prev,
             nextEl: next,
         },
+        breakpoints: {
+            300: {
+                slidesPerView: 1
+            },
+            769: {
+                slidesPerView: 2
+            }
+        }
     })
 }

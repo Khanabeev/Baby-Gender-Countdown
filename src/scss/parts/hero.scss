@@ -37,7 +37,7 @@
             margin-right: 57px;
         }
 
-        width: 56.75%;
+        width: 57.5%;
 
         h1 {
             @media (max-width: 992px) {
@@ -70,7 +70,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 43.25%;
+        width: 42.5%;
 
         @media (max-width: 992px) {
             width: 256px;
@@ -171,25 +171,5 @@
             font-weight: 300;
             line-height: 28px;
         }
-    }
-
-    // .countdown__days
-
-    &__days {
-    }
-
-    // .countdown__hours
-
-    &__hours {
-    }
-
-    // .countdown__minutes
-
-    &__minutes {
-    }
-
-    // .countdown__seconds
-
-    &__seconds {
     }
 }
