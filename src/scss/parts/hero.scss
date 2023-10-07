@@ -1,0 +1,195 @@
+.hero {
+    @include adaptive-value("margin-bottom", 63, 31, 1);
+
+    background-image: url("@img/home/hero-bgi-desktop.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @media (max-width: 425px) {
+        background-image: url("@img/home/hero-bgi-mobile.png");
+    }
+
+    // .hero__container
+
+    &__container {
+    }
+
+    // .hero__body
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 43px 0 28px 0;
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+            justify-content: center;
+            padding: 34px 0 16px 0;
+        }
+    }
+
+    // .hero__left
+
+    &__left {
+        @media (min-width: 993px) {
+            margin-right: 57px;
+        }
+
+        width: 56.75%;
+
+        h1 {
+            @media (max-width: 992px) {
+                text-align: center;
+            }
+        }
+
+        p {
+            line-height: 28px;
+            @include adaptive-value("margin-top", 14, 15, 1);
+            @include adaptive-value("margin-bottom", 24, 16, 1);
+
+            @media (max-width: 992px) {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 992px) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    // .hero__right
+
+    &__right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 43.25%;
+
+        @media (max-width: 992px) {
+            width: 256px;
+        }
+
+        img {
+        }
+    }
+}
+
+.countdown {
+    max-width: 517px;
+    width: 100%;
+    @include adaptive-value("margin-top", 40, 0, 1);
+    @include adaptive-value("padding-top", 18, 6, 1);
+    @include adaptive-value("padding-bottom", 16, 0, 1);
+    border-top: 2px dashed #fff;
+    border-bottom: 2px dashed #fff;
+
+    @media (max-width: 992px) {
+        padding-left: 15px;
+        padding-right: 15px;
+        border-bottom: unset;
+    }
+
+    // .countdown__items
+
+    &__items {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & > :not(:last-child) {
+            @include adaptive-value("margin-right", 19, 7, 1);
+        }
+    }
+
+    // .countdown__item
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #7c7c7c;
+        font-family: Oswald;
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include adaptive-value("font-size", 40, 17, 1);
+            font-style: normal;
+            font-weight: 600;
+            line-height: 28px;
+            border-radius: 50%;
+            @include adaptive-value("width", 117, 60, 1);
+            @include adaptive-value("height", 117, 60, 1);
+            min-width: 60px;
+            padding: 10px;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.3);
+            z-index: 1;
+
+            &:after {
+                position: absolute;
+                content: "";
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                @include adaptive-value("width", 93, 48, 1);
+                @include adaptive-value("height", 93, 48, 1);
+                border: 4px solid #fff;
+                border-radius: 50%;
+                z-index: -1;
+                background-color: #fdd7e1;
+            }
+
+            &:before {
+                position: absolute;
+                content: "";
+                left: 50%;
+                top: 50%;
+                @include adaptive-value("width", 71, 36, 1);
+                @include adaptive-value("height", 71, 36, 1);
+                transform: translate(-50%, -50%);
+                border: 2px dashed #fff;
+                border-radius: 50%;
+            }
+        }
+
+        label {
+            display: block;
+            text-align: center;
+            font-family: Oswald;
+            @include adaptive-value("font-size", 18, 12, 1);
+            font-style: normal;
+            font-weight: 300;
+            line-height: 28px;
+        }
+    }
+
+    // .countdown__days
+
+    &__days {
+    }
+
+    // .countdown__hours
+
+    &__hours {
+    }
+
+    // .countdown__minutes
+
+    &__minutes {
+    }
+
+    // .countdown__seconds
+
+    &__seconds {
+    }
+}
