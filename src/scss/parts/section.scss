@@ -327,6 +327,8 @@
             background-color: #fff;
             filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.14));
 
+            transition: all 0.3s ease 0s;
+
             @media (max-width: 768px) {
                 width: 40px;
                 height: 40px;
@@ -334,8 +336,21 @@
 
             svg {
                 pointer-events: none;
+                fill: #d0d0d0;
+                transition: all 0.3s ease 0s;
+                
                 @media (max-width: 425px) {
                     height: 14px;
+                }
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #b0e0e6;
+
+                    svg {
+                        fill: #fff;
+                    }
                 }
             }
         }
@@ -410,11 +425,18 @@
                         }
                     }
                 }
+
                 svg {
                     margin-left: 15px;
                     width: 13.33px;
                     flex: 0 0 13.33px;
                     transition: all 0.3s ease 0s;
+                }
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        background: #fde6dd;
+                    }
                 }
             }
 
@@ -427,7 +449,7 @@
 
                 p {
                     @include adaptive-value("margin-top", 31, 13, 1);
-                    @include adaptive-value("margin-bottom", 34, 15, 1);
+                    @include adaptive-value("margin-bottom", 24, 5, 1);
 
                     font-family: Manrope;
                     @include adaptive-value("font-size", 16, 14, 1);

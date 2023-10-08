@@ -96,11 +96,20 @@ p {
     height: 50px;
     min-height: 50px;
 
+    transition: all 0.3s ease 0s;
+
     svg {
         fill: #3b2e2c;
         width: fit-content;
         height: 17px;
         margin-right: 13px;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            background: none;
+            border: 1px solid #3b2e2c;
+        }
     }
 }
 
@@ -202,8 +211,6 @@ svg {
 
     @media (any-hover: hover) {
         &:hover {
-            transform: scale(1.1);
-
             svg {
                 transform: rotate(-180deg);
             }

@@ -5,6 +5,7 @@
     @include adaptive-value("padding-bottom", 30, 15, 1);
     padding-left: 15px;
     padding-right: 15px;
+    z-index: 15;
 
     // .header__container
 
@@ -111,6 +112,28 @@
 
                     @media (max-width: 992px) {
                         @include adaptive-value("font-size", 24, 16, 1);
+                    }
+
+                    position: relative;
+
+                    &:after {
+                        position: absolute;
+                        content: "";
+                        left: 0;
+                        bottom: -2px;
+                        background-color: #393939;
+                        max-width: 0;
+                        width: 100%;
+                        height: 1px;
+                        transition: all 0.3s ease 0s;
+                    }
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            &:after {
+                                max-width: 100%;
+                            }
+                        }
                     }
                 }
             }
