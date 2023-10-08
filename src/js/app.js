@@ -3,6 +3,7 @@ import "./parts/menu.js";
 import "./parts/slider.js";
 import "./parts/langs.js";
 import "./parts/countdown.js";
+import "./parts/animations.js";
 
 
 import { replaceDomElements } from "./static/replace.js";
