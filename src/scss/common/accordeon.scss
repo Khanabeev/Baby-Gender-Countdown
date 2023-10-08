@@ -3,6 +3,13 @@
 
     &__item {
         &[data-open] {
+            .accordion__item-title{
+                background: #FDE6DD !important;
+
+                svg{
+                    transform: rotate(-180deg);
+                }
+            }
             .accordion__item-content {
                 grid-template-rows: 1fr;
             }

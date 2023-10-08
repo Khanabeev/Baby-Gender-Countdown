@@ -17,9 +17,9 @@
         justify-content: center;
         flex-direction: column;
 
-        @include adaptive-value("margin-bottom", 33, 24, 1);
-
         p {
+            text-align: center;
+
             max-width: 595px;
             width: 100%;
         }
@@ -33,6 +33,16 @@
 
 #features {
     @include adaptive-value("margin-bottom", 66, 24, 1);
+
+    .section__top {
+        @include adaptive-value("margin-bottom", 33, 24, 1);
+
+        p {
+            @media (max-width: 425px) {
+                padding: 0 11px;
+            }
+        }
+    }
 
     .section__content {
         ol {
@@ -232,17 +242,38 @@
             line-height: 24px;
             @include adaptive-value("margin-top", 45, 13, 1);
             margin-inline: auto;
+
+            @media (max-width: 425px) {
+                padding: 0 3px;
+            }
         }
     }
 }
 
 #reviews {
+    @include adaptive-value("margin-bottom", 53, 24, 1);
+
     position: relative;
-    padding: 44px 0 84px 0;
+    @include adaptive-value("padding-top", 44, 16, 1);
+    @include adaptive-value("padding-bottom", 84, 30, 1);
     background-image: url("@img/reviews/reviewvs-bgi.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    @media (max-width: 425px) {
+        background-image: url("@img/reviews/reviewvs-bgi-mobile.png");
+    }
+
+    .section__top {
+        p {
+            @media (min-width: 425px) {
+                br {
+                    display: none;
+                }
+            }
+        }
+    }
 
     .section__content {
         position: relative;
@@ -303,6 +334,9 @@
 
             svg {
                 pointer-events: none;
+                @media (max-width: 425px) {
+                    height: 14px;
+                }
             }
         }
     }
@@ -314,6 +348,99 @@
         svg,
         img {
             transform: rotate(180deg);
+        }
+    }
+}
+
+#faq {
+    @include adaptive-value("margin-bottom", 59, 52, 1);
+
+    .section__top {
+        @include adaptive-value("margin-bottom", 33, 24, 1);
+
+        p {
+            @media (max-width: 425px) {
+                padding: 0 22px;
+            }
+        }
+    }
+
+    .accordion {
+        & > :not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        // .accordion__item
+
+        &__item {
+            // .accordion__item-title
+
+            &-title {
+                background: #c9e0e1;
+                border-radius: 10px;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                @include adaptive-value("padding-top", 15, 8, 1);
+                @include adaptive-value("padding-bottom", 15, 8, 1);
+                @include adaptive-value("padding-left", 32, 14, 1);
+                @include adaptive-value("padding-right", 25, 15, 1);
+
+                span {
+                    color: #393939;
+                    font-family: Manrope;
+                    @include adaptive-value("font-size", 18, 15, 1);
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 28px;
+
+                    br {
+                        display: none;
+                    }
+
+                    @media (max-width: 768px) {
+                        line-height: 21px;
+                    }
+
+                    @media (max-width: 425px) {
+                        br {
+                            display: block;
+                        }
+                    }
+                }
+                svg {
+                    margin-left: 15px;
+                    width: 13.33px;
+                    flex: 0 0 13.33px;
+                    transition: all 0.3s ease 0s;
+                }
+            }
+
+            // .accordion__item-content
+
+            &-content {
+                max-width: 1006px;
+                width: 100%;
+                @include adaptive-value("padding-left", 32, 14, 1);
+
+                p {
+                    @include adaptive-value("margin-top", 31, 13, 1);
+                    @include adaptive-value("margin-bottom", 34, 15, 1);
+
+                    font-family: Manrope;
+                    @include adaptive-value("font-size", 16, 14, 1);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 24px;
+                }
+            }
+
+            // .accordion__item-content
+
+            &-content {
+            }
         }
     }
 }
