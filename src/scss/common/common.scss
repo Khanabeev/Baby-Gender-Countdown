@@ -87,7 +87,7 @@ p {
     text-align: center;
 
     border-radius: 250px;
-    background: #b0e0e6;
+    background-color: #b0e0e6;
     font-family: Manrope;
     color: #3b2e2c;
     font-weight: 700;
@@ -95,8 +95,11 @@ p {
     width: 170px;
     height: 50px;
     min-height: 50px;
+    border: 1px solid transparent;
 
-    transition: all 0.3s ease 0s;
+    transition:
+        background-color 0.3s ease 0s,
+        border-color 0.3s ease 0s;
 
     svg {
         fill: #3b2e2c;
@@ -107,8 +110,8 @@ p {
 
     @media (any-hover: hover) {
         &:hover {
-            background: none;
-            border: 1px solid #3b2e2c;
+            background-color: transparent;
+            border-color: #3b2e2c;
         }
     }
 }
