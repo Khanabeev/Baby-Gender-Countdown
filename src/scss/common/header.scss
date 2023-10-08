@@ -148,7 +148,7 @@
         }
         flex: 0 0 auto;
 
-        svg {
+        img,svg {
             width: fit-content;
             fill: #838383;
             @include adaptive-value("height", 30, 22, 1);
